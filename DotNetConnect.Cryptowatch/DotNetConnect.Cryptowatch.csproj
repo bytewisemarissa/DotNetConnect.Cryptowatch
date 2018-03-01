@@ -6,6 +6,11 @@
     <Company />
     <Description>An asynchronous wrapper library for CryptoWat.ch</Description>
     <Copyright>2018</Copyright>
+    <PackageLicenseUrl>https://github.com/paranoidTwitch/DotNetConnect.Cryptowatch/blob/master/LICENCE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/paranoidTwitch/DotNetConnect.Cryptowatch/</PackageProjectUrl>
+    <PackageIconUrl>https://i.imgur.com/qLyye40.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/paranoidTwitch/DotNetConnect.Cryptowatch/</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
