@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
-using HelpfulThings.Connect.Cryptowatch.Configuration;
 using HelpfulThings.Connect.Cryptowatch.DataModel;
+using HelpfulThings.Connect.Cryptowatch.Ioc;
 using HelpfulThings.Connect.Cryptowatch.Result;
 
 namespace HelpfulThings.Connect.Cryptowatch.Metering
@@ -27,12 +27,19 @@ namespace HelpfulThings.Connect.Cryptowatch.Metering
         private long _processedSerial;
         private long _currentMeterValue;
 
-        private Task _limitResetTask;
-
         public long MeterMaxValue => _meterMaxValue;
-        public long MeterCurrentValue => _currentMeterValue;
+        public long MeterCurrentValue
+        {
+            get
+            {
+                lock (_resultsProcessingLock)
+                {
+                    return _currentMeterValue;
+                }
+            }
+        }
 
-        public RequestMeteringMonitor(DNCCryptowatchConfigurationModel configuration)
+        public RequestMeteringMonitor(CryptowatchApiOptions configuration)
         {
             _meterMaxValue = configuration.RequestMeterMaximum;
             
@@ -46,7 +53,7 @@ namespace HelpfulThings.Connect.Cryptowatch.Metering
             _processedSerial = 0;
             _currentMeterValue = _meterMaxValue;
 
-            _limitResetTask = Task.Run(() => MeterResetWorker());
+            Task.Run(MeterResetWorker);
         }
 
         private void MeterResetWorker()
@@ -65,11 +72,14 @@ namespace HelpfulThings.Connect.Cryptowatch.Metering
 
         public MeteringResult CheckMeter()
         {
-            if (_currentMeterValue > _stopThreshold)
+            lock (_resultsProcessingLock)
             {
-                return MeteringResult.Proceeded;
+                if (_currentMeterValue > _stopThreshold)
+                {
+                    return MeteringResult.Proceeded;
+                }
             }
-            
+
             return MeteringResult.Reject;
         }
 

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpfulThings.Connect.Cryptowatch", "HelpfulThings.Connect.Cryptowatch\HelpfulThings.Connect.Cryptowatch.csproj", "{2A01DE8B-FE3B-41BC-AAB8-3DAD9B8C6293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpfulThings.Connect.Cryptowatch.Tests.Live", "HelpfulThings.Connect.Cryptowatch.Tests.Live\HelpfulThings.Connect.Cryptowatch.Tests.Live.csproj", "{BCF09F6C-5AC6-4720-8193-51477DA64691}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A01DE8B-FE3B-41BC-AAB8-3DAD9B8C6293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A01DE8B-FE3B-41BC-AAB8-3DAD9B8C6293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A01DE8B-FE3B-41BC-AAB8-3DAD9B8C6293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A01DE8B-FE3B-41BC-AAB8-3DAD9B8C6293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF09F6C-5AC6-4720-8193-51477DA64691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF09F6C-5AC6-4720-8193-51477DA64691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF09F6C-5AC6-4720-8193-51477DA64691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF09F6C-5AC6-4720-8193-51477DA64691}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using HelpfulThings.Connect.Cryptowatch.Configuration;
+using HelpfulThings.Connect.Cryptowatch.Ioc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,7 +28,7 @@ namespace HelpfulThings.Connect.Cryptowatch.Tests.Live
 
             var serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddDotNetConnectCryptowatch(builder.Build());
+            serviceCollection.AddDotNetConnectCryptowatch();
 
             _serviceProvider = serviceCollection.BuildServiceProvider();
         }

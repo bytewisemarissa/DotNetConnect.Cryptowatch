@@ -3,9 +3,9 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using HelpfulThings.Connect.Cryptowatch.Configuration;
 using HelpfulThings.Connect.Cryptowatch.DataModel;
 using HelpfulThings.Connect.Cryptowatch.Exceptions;
+using HelpfulThings.Connect.Cryptowatch.Ioc;
 using HelpfulThings.Connect.Cryptowatch.Metering;
 using HelpfulThings.Connect.Cryptowatch.Result;
 using Newtonsoft.Json;
@@ -26,7 +26,7 @@ namespace HelpfulThings.Connect.Cryptowatch
 
         public IRequestMeteringMonitor RequestMeteringMonitor => Monitor;
 
-        public RequestRouter(DNCCryptowatchConfigurationModel configuration, IRequestMeteringMonitor requestMeteringMonitor)
+        public RequestRouter(CryptowatchApiOptions configuration, IRequestMeteringMonitor requestMeteringMonitor)
         {
             Monitor = requestMeteringMonitor;
 
