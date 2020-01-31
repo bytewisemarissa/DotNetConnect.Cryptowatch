@@ -17,12 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="testconfig.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\HelpfulThings.Connect.Cryptowatch\HelpfulThings.Connect.Cryptowatch.csproj" />
     </ItemGroup>
 

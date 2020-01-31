@@ -22,13 +22,15 @@ namespace HelpfulThings.Connect.Cryptowatch.Tests.Live
         [AssemblyInitialize]
         public static void AssemblyInitialize(TestContext context)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("testconfig.json");
-
             var serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddDotNetConnectCryptowatch();
+            serviceCollection.AddDotNetConnectCryptowatch(opts =>
+            {
+                opts.RequestMeterMaximum = 8000000000;
+                opts.StopThresholdPercentage = 0.00001f;
+                opts.UserAgent = "HelpfulThings.Connect.Cryptowatch";
+                opts.UserAgentVersion = "1.0.0";
+            });
 
             _serviceProvider = serviceCollection.BuildServiceProvider();
         }

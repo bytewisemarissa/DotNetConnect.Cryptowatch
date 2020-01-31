@@ -1,8 +1,0 @@
-﻿{
-  "DotNetConnect.Cryptowatch": {
-    "RequestMeterMaximum": 8000000000,
-    "StopThresholdPercentage": 0.00001,
-    "UserAgent": "DotNetConnect.Cryptowatch",
-    "UserAgentVersion": "0.0.1" 
-  } 
-}
